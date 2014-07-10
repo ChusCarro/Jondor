@@ -1,4 +1,4 @@
 Jondor
 ======
 
-Java HTCondor Controller
+Java HTCondor Controller Library
