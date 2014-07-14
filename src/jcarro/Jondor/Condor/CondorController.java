@@ -1,4 +1,4 @@
-package jcarro.Jondor;
+package jcarro.Jondor.Condor;
 
 import java.util.StringTokenizer;
 

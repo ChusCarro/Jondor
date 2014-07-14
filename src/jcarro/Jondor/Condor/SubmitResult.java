@@ -1,7 +1,7 @@
 /**
  * 
  */
-package jcarro.Jondor;
+package jcarro.Jondor.Condor;
 
 /**
  * @author jcarro
