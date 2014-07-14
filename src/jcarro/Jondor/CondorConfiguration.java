@@ -10,7 +10,7 @@ import java.util.ArrayList;
  * @author jcarro
  * 
  */
-public class MatlabCondorConfiguration {
+public class CondorConfiguration {
 
 	private boolean shortJob = false;
 	private boolean longJob = false;
