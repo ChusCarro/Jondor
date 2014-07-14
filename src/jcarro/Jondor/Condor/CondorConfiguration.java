@@ -23,6 +23,8 @@ public class CondorConfiguration {
 	private String logFile = null;
 	private String arguments = null;
 
+	private Universe universe = null;
+
 	private ArrayList<String> inputFiles = new ArrayList<String>();
 
 	private int requestCPUs = -1;
@@ -36,14 +38,22 @@ public class CondorConfiguration {
 		try {
 			output = new PrintWriter(file);
 
+			output.println("##---------------------------------------------------------");
 			output.println("##");
-			output.println("## .condor file for matlab simulation");
+			output.println("## Condor Configuration created with Jondor");
+			output.println("## https://github.com/ChusCarro/Jondor");
 			output.println("##");
+			output.println("## Developed by Jesus Carro");
+			output.println("## jcarro@usj.es");
+			output.println("##");
+			output.println("##---------------------------------------------------------");
 			output.println();
-			output.println("Universe = Vanilla");
+			output.println("Universe = " + universe);
 			output.println();
-			output.println("InitialDir = " + initialDir);
-			output.println();
+			if (initialDir != null) {
+				output.println("InitialDir = " + initialDir);
+				output.println();
+			}
 			output.println("Executable = " + executable);
 			output.println();
 			if (errFile != null)
@@ -258,11 +268,12 @@ public class CondorConfiguration {
 	public boolean addInputFile(ArrayList<String> inputFiles) {
 		boolean state = true;
 
-		for(int i=0;i<inputFiles.size();i++)
-			state=state & this.inputFiles.add(inputFiles.get(i));
-		
+		for (int i = 0; i < inputFiles.size(); i++)
+			state = state & this.inputFiles.add(inputFiles.get(i));
+
 		return state;
 	}
+
 	/**
 	 * @param inputFiles
 	 *            the inputFiles to set
@@ -299,5 +310,13 @@ public class CondorConfiguration {
 	 */
 	public void setNumSimulations(int numSimulations) {
 		this.numSimulations = numSimulations;
+	}
+
+	public Universe getUniverse() {
+		return universe;
+	}
+
+	public void setUniverse(Universe universe) {
+		this.universe = universe;
 	}
 }
