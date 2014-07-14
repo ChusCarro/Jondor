@@ -39,7 +39,7 @@ public class CondorController {
 	 * @param file
 	 * @return
 	 */
-	public SubmitResult submit(String file) {
+	public CondorSubmitResult submit(String file) {
 		String output = serverController.execCommand("condor_submit " + file);
 		
 		System.out.println(output);
@@ -74,7 +74,7 @@ public class CondorController {
 			System.out.println(output);
 		}
 
-		return new SubmitResult(clusterID, numJobs);
+		return new CondorSubmitResult(clusterID, numJobs);
 	}
 
 	public boolean waitJob(String logFile, int waitTime) {

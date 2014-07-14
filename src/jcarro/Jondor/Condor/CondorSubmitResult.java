@@ -7,7 +7,7 @@ package jcarro.Jondor.Condor;
  * @author jcarro
  * 
  */
-public class SubmitResult {
+public class CondorSubmitResult {
 
 	public int clusterID;
 	public int numJobs;
@@ -16,7 +16,7 @@ public class SubmitResult {
 	 * @param clusterID
 	 * @param numJobs
 	 */
-	public SubmitResult(int clusterID, int numJobs) {
+	public CondorSubmitResult(int clusterID, int numJobs) {
 		this.clusterID = clusterID;
 		this.numJobs = numJobs;
 	}
