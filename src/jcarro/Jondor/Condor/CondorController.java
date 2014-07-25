@@ -77,9 +77,9 @@ public class CondorController {
 		return new CondorSubmitResult(clusterID, numJobs);
 	}
 
-	public boolean waitJob(String logFile, int waitTime) {
+	public boolean waitJob(String jobRef, int waitTime) {
 		String output = serverController.execCommand("condor_wait -wait "
-				+ waitTime + " " + logFile);
+				+ waitTime + " " + jobRef);
 		System.out.println(output);
 		if(output.compareTo("All jobs done.\n")==0)
 			return true;
