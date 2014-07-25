@@ -86,4 +86,10 @@ public class CondorController {
 		return false;
 				
 	}
+	
+	public void release(String jobRef) {
+		String output = serverController.execCommand("condor_release "
+				+" " + jobRef);
+		System.out.println(output);			
+	}
 }
